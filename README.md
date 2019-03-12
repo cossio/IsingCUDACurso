@@ -39,7 +39,7 @@ $$m = [1-\sinh^{-4}(2\beta)]^{1/8}$$
 Programamos una simulación Monte Carlo de este sistema en CUDA (fichero `ising.cu`), con $N=1024$ espines ($L=32$).
 El comportamiento se grafica en la figura siguiente, que muestra la solución analítica y la magnetización encontrada en las simulaciones.
 
-![Results](https://ibb.co/FJsVjzm "Results")
+![Results](https://i.ibb.co/gwvVBJm/Ising.png "Results")
 
 Para reproducir estos resultados, compilamos `ising.cu` y lo ejectuamos con los siguientes comandos:
 
