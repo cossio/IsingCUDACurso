@@ -41,6 +41,8 @@ El comportamiento se grafica en la figura siguiente, que muestra la solución an
 
 ![Results](https://i.ibb.co/gwvVBJm/Ising.png "Results")
 
+La discrepancia entre la solución analítica y las simulaciones se debe a que la solución de Onsager asume que el sistema es infinito ($N\rightarrow\infty$) mientras que nuestras simulaciones se realizan necesariamente en un sistema finito ($N=1024$).
+
 Para reproducir estos resultados, compilamos `ising.cu` y lo ejectuamos con los siguientes comandos:
 
 ```
