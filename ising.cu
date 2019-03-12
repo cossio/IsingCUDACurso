@@ -44,7 +44,7 @@ __device__ int globalThreadIdx() {
 __global__ void initialize_rand(curandState *rngState) {
     // Each thread gets same seed, a different sequence number, no offset
     int idx = globalThreadIdx();
-    assert(0 <= idx && idx < N);
+    //assert(0 <= idx && idx < N);
     curand_init(RANDSEED, idx, 0, rngState + idx);
 }
 
@@ -65,10 +65,10 @@ __host__ __device__ short linear_index(int x, int y) {
     while (x >= L) {x -= L; }
     while (y < 0)  {y += L; }
     while (y >= L) {y -= L; }
-    assert(x >= 0 && x < L);
-    assert(y >= 0 && y < L);
+    //assert(x >= 0 && x < L);
+    //assert(y >= 0 && y < L);
     int idx = x + L * y;
-    assert(0 <= idx && idx < N);
+    //assert(0 <= idx && idx < N);
     return idx;
 }
 
@@ -102,7 +102,7 @@ __device__ short neighbor_sum(short *spins) {
 __device__ void metropolis(short *spins, curandState *rngState, float beta) {
     int idx = globalThreadIdx();
     short state = spins[idx];
-    assert(state == 1 || state == -1);
+    //assert(state == 1 || state == -1);
     
     // Metropolis update rule
     float deltaE = 2.0f * state * neighbor_sum(spins);
@@ -145,7 +145,7 @@ __global__ void simulate(short *spinsGlob, curandState *rngState, float beta) {
 __host__ __device__ float magnetization(short* spins) {
     short M = 0;
     for (int i = 0; i < N; ++i) {
-        assert(spins[i] == -1 || spins[i] == 1);
+        //assert(spins[i] == -1 || spins[i] == 1);
         M += spins[i];
     }
     return (float)M / N;
