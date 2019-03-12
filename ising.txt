@@ -1,5 +1,5 @@
-# Simulating 1024 spins, on a square grid of length 32
-# beta	absolute magnetization
+Simulating 1024 spins, on a square grid of length 32
+beta	absolute magnetization
 0.000000	0.021484
 0.010000	0.033203
 0.020000	0.003906
